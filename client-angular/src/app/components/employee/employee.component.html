@@ -1,0 +1,33 @@
+<body>
+  <a routerLink="/home">
+    <h2>Employee</h2>
+  </a>
+  <div style="display: flex; justify-content: flex-end">
+    <button routerLink="/add-employee">Add Employee</button>
+  </div>
+  <table style="margin-top: 10px">
+    <tr>
+      <th>Name</th>
+      <th>NIK</th>
+      <th>Address</th>
+      <th>Job Position</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.nik }}</td>
+      <td>{{ employee.address }}</td>
+      <td>{{ employee.JobPosition.name }}</td>
+      <td>
+        <button
+          routerLink="/edit-employee/{{ employee.id }}"
+          style="margin: 5px"
+        >
+          Edit
+        </button>
+        <button (click)="deleteEmployee(employee.id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+  <br />
+</body>

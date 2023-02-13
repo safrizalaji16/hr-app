@@ -1,0 +1,40 @@
+.container {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+form {
+  margin-top: 50px;
+  display: inline-block;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

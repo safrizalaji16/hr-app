@@ -1,4 +1,4 @@
-const { JobPosition } = require("../models");
+const { JobPosition, JobTitle } = require("../models");
 
 class Controller {
   static async createJobPosition(req, res, next) {
@@ -17,7 +17,7 @@ class Controller {
   }
   static async readAllJobPositions(req, res, next) {
     try {
-      const jobPositions = await JobPosition.findAll();
+      const jobPositions = await JobPosition.findAll({ include: JobTitle });
 
       res.status(200).json(jobPositions);
     } catch (err) {
@@ -27,7 +27,7 @@ class Controller {
   static async readOneJobPosition(req, res, next) {
     try {
       const { id } = req.params;
-      const jobPosition = await JobPosition.findByPk(id);
+      const jobPosition = await JobPosition.findByPk(id, { include: JobTitle });
 
       if (!jobPosition) {
         throw {

@@ -1,0 +1,20 @@
+<body>
+  <header>
+    <h1>Welcome to HR Management</h1>
+  </header>
+  <main>
+    <div class="container">
+      <a routerLink="/job-title" class="home-page-btn"> Job Title List </a>
+      <a routerLink="/job-position" class="home-page-btn">
+        Job Position List
+      </a>
+      <a routerLink="/employee" class="home-page-btn">Employee List</a>
+    </div>
+    <div class="logout" *ngIf="isLogin; else noEdit">
+      <button (click)="logout()" class="home-page-btn">Logout</button>
+    </div>
+    <ng-template #noEdit>
+      <button (click)="logout()" class="home-page-btn">Login</button>
+    </ng-template>
+  </main>
+</body>

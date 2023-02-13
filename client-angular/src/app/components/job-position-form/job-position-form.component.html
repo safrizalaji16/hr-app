@@ -1,0 +1,21 @@
+<form (ngSubmit)="addJobPosition()">
+  <h2>Add Job Position</h2>
+  <label for="code">Code:</label>
+  <input [(ngModel)]="form.code" type="text" id="code" name="code" />
+  <label for="name">Name:</label>
+  <input
+    [(ngModel)]="form.name"
+    type="text"
+    id="name"
+    name="name"
+  /><br /><br />
+  <label for="id">Select Job Title:</label>
+  <select [(ngModel)]="form.JobTitleId" id="id" name="id">
+    <option *ngFor="let jobTitle of jobTitles" [value]="jobTitle.id">
+      {{ jobTitle.name }}
+    </option>
+  </select>
+  <br /><br />
+  <button routerLink="/job-position">Cancel</button>
+  <input type="submit" value="Submit" />
+</form>

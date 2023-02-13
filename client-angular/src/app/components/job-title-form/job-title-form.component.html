@@ -1,0 +1,14 @@
+<form (ngSubmit)="addJobTitle()">
+  <h2>Add Job Title</h2>
+  <label for="code">Code:</label>
+  <input [(ngModel)]="form.code" type="text" id="code" name="code" />
+  <label for="name">Name:</label>
+  <input
+    [(ngModel)]="form.name"
+    type="text"
+    id="name"
+    name="name"
+  /><br /><br />
+  <button routerLink="/job-title">Cancel</button>
+  <input type="submit" value="Submit" />
+</form>

@@ -1,0 +1,26 @@
+<a routerLink="/home">
+  <h2>Job Title</h2>
+</a>
+<div style="display: flex; justify-content: flex-end">
+  <button routerLink="/add-job-title">Add Job Title</button>
+</div>
+<table style="margin-top: 10px">
+  <tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let jobTitle of jobTitles">
+    <td>{{ jobTitle.code }}</td>
+    <td>{{ jobTitle.name }}</td>
+    <td>
+      <button
+        routerLink="/edit-job-title/{{ jobTitle.id }}"
+        style="margin: 5px"
+      >
+        Edit
+      </button>
+      <button (click)="deleteJobTitle(jobTitle.id)">Delete</button>
+    </td>
+  </tr>
+</table>

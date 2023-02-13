@@ -1,0 +1,48 @@
+form {
+  width: 500px;
+  margin: 50px auto;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  display: block;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: left;
+}
+
+h2 {
+  text-align: center;
+}
