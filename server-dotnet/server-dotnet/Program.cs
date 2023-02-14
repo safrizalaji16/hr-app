@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
-using server_dotnet.Data;
+using Dapper;
+using server_dotnet.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,9 +9,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddDbContext<ServerDBContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ServerDotnetConnectionString")));
+builder.Services.AddScoped<IDbService, DbService>();
+builder.Services.AddScoped<IJobTitleService, JobTitleService>();
+DefaultTypeMap.MatchNamesWithUnderscores = true;
 
 var app = builder.Build();
 
