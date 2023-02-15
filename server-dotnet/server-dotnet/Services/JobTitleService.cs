@@ -14,12 +14,12 @@ namespace server_dotnet.Services
         {
             var result =
                 await _dbService.EditData(
-                    "INSERT INTO public.employee (id, code, name) VALUES (@Id, @Code, @Name)",
+                    "INSERT INTO public.jobTitle (id, code, name) VALUES (@Id, @Code, @Name)",
                     jobTitle);
             return true;
         }
 
-        public async Task<List<JobTitle>> GetTitleList()
+        public async Task<List<JobTitle>> GetJobTitleList()
         {
             var jobTitleList = await _dbService.GetAll<JobTitle>("SELECT * FROM public.jobTitle", new { });
             return jobTitleList;

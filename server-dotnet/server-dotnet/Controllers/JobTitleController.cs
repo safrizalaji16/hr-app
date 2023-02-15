@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using server_dotnet.Models;
 using server_dotnet.Services;
 
 namespace server_dotnet.Controllers
@@ -8,10 +9,11 @@ namespace server_dotnet.Controllers
     public class JobTitleController : Controller
     {
         private readonly IJobTitleService _jobTitleService;
-        public JobTitlesController(IJobTitleService jobTitleService)
+        public JobTitleController(IJobTitleService jobTitleService)
         {
-            _jobTitleService = jobTitleService;
+             _jobTitleService = jobTitleService;
         }
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -19,12 +21,12 @@ namespace server_dotnet.Controllers
             return Ok(result);
         }
 
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetJobTitle(int id)
-        {
-            var result = await _jobTitleService.GetJobTitle(id);
-            return Ok(result);
-        }
+        //[HttpGet("{id:int}")]
+        //public async Task<IActionResult> GetJobTitle(int id)
+        //{
+        //    var result = await _jobTitleService.GetJobTitle(id);
+        //    return Ok(result);
+        //}
         [HttpPost]
         public async Task<IActionResult> AddJobTitle([FromBody]JobTitle jobTitle)
         {

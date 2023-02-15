@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Hp\\source\\repos\\server-dotnet\\server-dotnet\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\server-dotnet.bundle.scp.css",
-      "PackagePath": "staticwebassets\\server-dotnet.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\Hp\\source\\repos\\server-dotnet\\server-dotnet\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

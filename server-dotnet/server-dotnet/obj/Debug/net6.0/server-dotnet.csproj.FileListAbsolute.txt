@@ -25,13 +25,11 @@ C:\Users\Hp\source\repos\server-dotnet\server-dotnet\obj\Debug\net6.0\server-dot
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\obj\Debug\net6.0\server-dotnet.genruntimeconfig.cache
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\obj\Debug\net6.0\ref\server-dotnet.dll
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\bin\Debug\net6.0\server-dotnet.staticwebassets.runtime.json
-C:\Users\Hp\source\repos\server-dotnet\server-dotnet\obj\Debug\net6.0\server-dotnet.RazorAssemblyInfo.cache
-C:\Users\Hp\source\repos\server-dotnet\server-dotnet\obj\Debug\net6.0\server-dotnet.RazorAssemblyInfo.cs
-C:\Users\Hp\source\repos\server-dotnet\server-dotnet\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
-C:\Users\Hp\source\repos\server-dotnet\server-dotnet\obj\Debug\net6.0\scopedcss\projectbundle\server-dotnet.bundle.scp.css
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\obj\Debug\net6.0\server-dotnet.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\obj\Debug\net6.0\server-dotnet.csproj.CopyComplete
+C:\Users\Hp\source\repos\server-dotnet\server-dotnet\bin\Debug\net6.0\Dapper.dll
+C:\Users\Hp\source\repos\server-dotnet\server-dotnet\bin\Debug\net6.0\Npgsql.dll

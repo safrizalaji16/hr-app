@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Z5N/qOKh5WIGkM4VlhOu2hErcR5yiSgOIpbziHjdF/g=",
+  "Hash": "4ewoy8WUPQQzFRsoFyyK3T7RPVzcjYN3MGLsaONZ0bo=",
   "Source": "server-dotnet",
   "BasePath": "_content/server-dotnet",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\Hp\\source\\repos\\server-dotnet\\server-dotnet\\obj\\Debug\\net6.0\\scopedcss\\bundle\\server-dotnet.styles.css",
-      "SourceId": "server-dotnet",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Hp\\source\\repos\\server-dotnet\\server-dotnet\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/server-dotnet",
-      "RelativePath": "server-dotnet.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Hp\\source\\repos\\server-dotnet\\server-dotnet\\obj\\Debug\\net6.0\\scopedcss\\bundle\\server-dotnet.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\Hp\\source\\repos\\server-dotnet\\server-dotnet\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\server-dotnet.bundle.scp.css",
-      "SourceId": "server-dotnet",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Hp\\source\\repos\\server-dotnet\\server-dotnet\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/server-dotnet",
-      "RelativePath": "server-dotnet.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Hp\\source\\repos\\server-dotnet\\server-dotnet\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\server-dotnet.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\Hp\\source\\repos\\server-dotnet\\server-dotnet\\wwwroot\\css\\site.css",
       "SourceId": "server-dotnet",

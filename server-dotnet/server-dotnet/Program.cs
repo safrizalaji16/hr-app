@@ -11,6 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IDbService, DbService>();
 builder.Services.AddScoped<IJobTitleService, JobTitleService>();
+//builder.Services.AddScoped<IJobPositionService, JobPositionService>();
+//builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 DefaultTypeMap.MatchNamesWithUnderscores = true;
 
 var app = builder.Build();
