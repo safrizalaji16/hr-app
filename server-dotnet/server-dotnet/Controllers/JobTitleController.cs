@@ -1,49 +1,62 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using server_dotnet.Models;
-using server_dotnet.Services;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace server_dotnet.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
-    public class JobTitleController : Controller
+    [ApiController]
+    public class JobTitleController : ControllerBase
     {
-        private readonly IJobTitleService _jobTitleService;
-        public JobTitleController(IJobTitleService jobTitleService)
+        private static List<JobTitle> jobTitles = new List<JobTitle>
         {
-             _jobTitleService = jobTitleService;
-        }
-
+            new JobTitle {
+                Id = 1,
+                Code = "Manag",
+                Name = "Managerial"
+            },
+            new JobTitle {
+                Id = 2,
+                Code = "Eng",
+                Name = "Engineer"
+            }
+        };
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult<List<JobTitle>>> Get()
         {
-            var result = await _jobTitleService.GetJobTitleList();
-            return Ok(result);
+            return Ok(jobTitles);
         }
-
-        //[HttpGet("{id:int}")]
-        //public async Task<IActionResult> GetJobTitle(int id)
-        //{
-        //    var result = await _jobTitleService.GetJobTitle(id);
-        //    return Ok(result);
-        //}
-        [HttpPost]
-        public async Task<IActionResult> AddJobTitle([FromBody]JobTitle jobTitle)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<JobTitle>> Get(int id)
         {
-            var result = await _jobTitleService.CreateJobTitle(jobTitle);
-            return Ok(result);
+            var jobTitle = jobTitles.Find(j => j.Id == id);
+            if (jobTitle == null)
+                return BadRequest("Job title not found");
+            return Ok(jobTitle);
+        }
+        [HttpPost]
+        public async Task<ActionResult<List<JobTitle>>> AddJobTitle(JobTitle jobTitle)
+        {
+            jobTitles.Add(jobTitle);
+            return Ok(jobTitles);
         }
         [HttpPut]
-        public async Task<IActionResult> UpdateJobTitle([FromBody]JobTitle jobTitle)
+        public async Task<ActionResult<List<JobTitle>>> UpdateJobTitle(JobTitle request)
         {
-            var result = await _jobTitleService.UpdateJobTitle(jobTitle);
-            return Ok(result);
+            var jobTitle = jobTitles.Find(j => j.Id == request.Id);
+            if (jobTitle == null)
+                return BadRequest("Job title not found");
+            jobTitle.Code = request.Code;
+            jobTitle.Name = request.Name;
+            return Ok(jobTitles);
         }
-        [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteJobTitle(int id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<JobTitle>> Delete(int id)
         {
-            var result = await _jobTitleService.DeleteJobTitle(id);
-            return Ok(result);
+            var jobTitle = jobTitles.Find(j => j.Id == id);
+            if (jobTitle == null)
+                return BadRequest("Job title not found");
+            jobTitles.Remove(jobTitle);
+            return Ok(jobTitles);
         }
     }
 }

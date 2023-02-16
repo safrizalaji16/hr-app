@@ -31,5 +31,3 @@ C:\Users\Hp\source\repos\server-dotnet\server-dotnet\bin\Debug\net6.0\Swashbuckl
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\obj\Debug\net6.0\server-dotnet.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Hp\source\repos\server-dotnet\server-dotnet\obj\Debug\net6.0\server-dotnet.csproj.CopyComplete
-C:\Users\Hp\source\repos\server-dotnet\server-dotnet\bin\Debug\net6.0\Dapper.dll
-C:\Users\Hp\source\repos\server-dotnet\server-dotnet\bin\Debug\net6.0\Npgsql.dll

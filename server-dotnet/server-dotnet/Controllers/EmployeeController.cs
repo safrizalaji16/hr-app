@@ -1,49 +1,68 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using server_dotnet.Models;
-using server_dotnet.Services;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace server_dotnet.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
-    public class EmployeeController : Controller
+    [ApiController]
+    public class EmployeeController : ControllerBase
     {
-        private readonly IEmployeeService _employeeService;
-        public EmployeeController(IEmployeeService employeeService)
+        private static List<Employee> employees = new List<Employee>
         {
-            _employeeService = employeeService;
-        }
-
+            new Employee {
+                Id = 1,
+                Name = "employee1",
+                Nik = "123456789",
+                Address = "Jakarta",
+                JobPositionId = 1
+            },
+            new Employee {
+                Id = 2,
+                Name = "employee2",
+                Nik = "987654321",
+                Address = "Semarang",
+                JobPositionId = 2
+            }
+        };
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult<List<Employee>>> Get()
         {
-            var result = await _employeeService.GetEmployeeList();
-            return Ok(result);
+            return Ok(employees);
         }
-
-        //[HttpGet("{id:int}")]
-        //public async Task<IActionResult> GetEmployee(int id)
-        //{
-        //    var result = await _employeeService.GetEmployee(id);
-        //    return Ok(result);
-        //}
-        [HttpPost]
-        public async Task<IActionResult> AddEmployee([FromBody]Employee employee)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Employee>> Get(int id)
         {
-            var result = await _employeeService.CreateEmployee(employee);
-            return Ok(result);
+            var employee = employees.Find(j => j.Id == id);
+            if (employee == null)
+                return BadRequest("Employee not found");
+            return Ok(employee);
+        }
+        [HttpPost]
+        public async Task<ActionResult<List<Employee>>> AddEmployee(Employee employee)
+        {
+            employees.Add(employee);
+            return Ok(employees);
         }
         [HttpPut]
-        public async Task<IActionResult> UpdateEmployee([FromBody]Employee employee)
+        public async Task<ActionResult<List<Employee>>> UpdateEmployee(Employee request)
         {
-            var result = await _employeeService.UpdateEmployee(employee);
-            return Ok(result);
+            var employee = employees.Find(j => j.Id == request.Id);
+            if (employee == null)
+                return BadRequest("Employee not found");
+            employee.Name = request.Name;
+            employee.Nik = request.Nik;
+            employee.Address = request.Address;
+            employee.JobPositionId = request.JobPositionId;
+            return Ok(employees);
         }
-        [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteEmployee(int id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Employee>> Delete(int id)
         {
-            var result = await _employeeService.DeleteEmployee(id);
-            return Ok(result);
+            var employee = employees.Find(j => j.Id == id);
+            if (employee == null)
+                return BadRequest("Employee not found");
+            employees.Remove(employee);
+            return Ok(employees);
         }
     }
 }

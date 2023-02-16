@@ -1,6 +1,3 @@
-using Dapper;
-using server_dotnet.Services;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,11 +6,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IDbService, DbService>();
-builder.Services.AddScoped<IJobTitleService, JobTitleService>();
-//builder.Services.AddScoped<IJobPositionService, JobPositionService>();
-//builder.Services.AddScoped<IEmployeeService, EmployeeService>();
-DefaultTypeMap.MatchNamesWithUnderscores = true;
 
 var app = builder.Build();
 
