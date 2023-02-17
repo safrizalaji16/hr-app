@@ -31,6 +31,7 @@ export class JobTitleEditComponent implements OnInit {
       this.form = this.jobTitle;
     });
   }
+
   editJobTitle() {
     this.jobTitleService
       .editJobTitle(this.id.id, this.form)
